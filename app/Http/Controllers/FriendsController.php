@@ -23,9 +23,11 @@ class FriendsController extends Controller
 
     public function store(Request $request) {
         $request->validate([
-            'uid' => 'string|required',
-            'user_name' => 'string|required',
-            'nick_name' => 'string|required',
+            'last_name' => 'string|required',
+            'first_name' => 'string|required',
+            'middle_name' => 'string|required',
+            'age' => 'integer|required',
+            'birthday' => 'date|required',
         ]);
 
         try {
