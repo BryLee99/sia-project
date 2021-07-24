@@ -15,9 +15,11 @@ class CreateFriendsTable extends Migration
     {
         Schema::create('friends', function (Blueprint $table) {
             $table->id();
-            $table->string('uid');
-            $table->string('user_name');
-            $table->string('nick_name');
+            $table->string('last_name');
+            $table->string('first_name');
+            $table->string('middle_name');
+            $table->integer('age');
+            $table->date('birthday');
             $table->timestamps();
         });
     }

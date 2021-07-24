@@ -15,8 +15,8 @@ class FriendsController extends Controller
     public function search(Request $request) {
         $request->validate(['key'=>'string|required']);
 
-        $friends = Friends::where('uid','like',"%$request->key%")
-            ->orWhere('user_name','like',"%$request->key%")->get();
+        $friends = Friends::where('last_name','like',"%$request->key%")
+            ->orWhere('first_name','like',"%$request->key%")->get();
 
         return response()->json($friends, 200);
     }
@@ -54,7 +54,7 @@ class FriendsController extends Controller
     }
 
     public function index() {
-        $friends = Friends::orderBy('uid')->get();
+        $friends = Friends::orderBy('last_name')->get();
         return response()->json($friends, 200);
     }
 

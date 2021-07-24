@@ -10,12 +10,14 @@ class Friends extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uid',
-        'user_name',
-        'nick_name',
+        'last_name',
+        'first_name',
+        'middle_name',
+        'age',
+        'birthday'
     ];
 
     public function container() {
-        return $this->belongsTo('App\Models\Friend', 'nick_name', 'id');
+        return $this->belongsTo('App\Models\Friends', 'last_name', 'id');
     }
 }
